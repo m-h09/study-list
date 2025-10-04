@@ -23,3 +23,29 @@ end
 既存機能が正常動作することを確認
 
 docker exec -it lingo_emoji-db-1 /bin/bash
+
+# Gemの配置場所の判断基準
+1. 環境別の分類
+メイン部分（グループ外）
+
+本番環境でも使用するGem
+アプリケーションの基本機能に必要なGem
+group :development, :test
+
+開発・テスト環境でのみ使用
+デバッグ、テスト、コード品質チェック用
+group :development
+
+開発環境でのみ使用
+開発効率を上げるためのツール
+group :production
+
+本番環境でのみ使用（稀）
+
+#シェア機能追加
+gem "meta-tags"
+rails g meta_tags:install
+-　シェア機能追加のURLで以下のgemを追加
+[![Image from Gyazo](https://i.gyazo.com/9417372f50ffc9a2f8b45501426476bb.png)](https://gyazo.com/9417372f50ffc9a2f8b45501426476bb)
+
+https://zenn.dev/goldsaya/articles/ba945b877daa07#5.-top_image%E3%81%AE%E4%BD%9C%E6%88%90
